@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/Registarse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="60dp"
+        android:text="Registarse"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/InicioSesion"
+        app:layout_constraintTop_toBottomOf="@+id/pwd" />
+
+    <EditText
+        android:id="@+id/Correo"
+        android:layout_width="245dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="83dp"
+        android:layout_marginTop="196dp"
+        android:layout_marginEnd="83dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text="Escriba su correo electronico"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/pwd"
+        android:layout_width="245dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="83dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="83dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text="Escriba su contraseña"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Correo" />
+
+    <Button
+        android:id="@+id/InicioSesion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="45dp"
+        android:text="Iniciar Sesion"
+        app:layout_constraintEnd_toStartOf="@+id/Registarse"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pwd" />
+
+    <TextView
+        android:id="@+id/Recordar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="34dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="247dp"
+        android:text="Recordar contraseña"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/InicioSesion" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
