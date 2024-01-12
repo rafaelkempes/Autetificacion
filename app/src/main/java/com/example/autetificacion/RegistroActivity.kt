@@ -7,6 +7,7 @@ import android.widget.Toast
 import com.example.autetificacion.databinding.ActivityMainBinding
 import com.example.autetificacion.databinding.ActivityRegistroBinding
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 
 class RegistroActivity : AppCompatActivity() {
     lateinit var binding: ActivityRegistroBinding
@@ -14,6 +15,7 @@ class RegistroActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityRegistroBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        val db= FirebaseFirestore.getInstance()
 
         title = "Nuevo usuario"
         binding.BRegistrase.setOnClickListener {
@@ -26,6 +28,12 @@ class RegistroActivity : AppCompatActivity() {
                     binding.contrasena.text.toString()
                 ).addOnCompleteListener {
                     if (it.isSuccessful) {
+                        db.collection("usuarios").document(binding.email.text.toString()).set(
+                            mapOf(
+                                "nombre"  to  binding.Nombre.text.toString(),
+                                "apellidos" to binding.Apellidos.text.toString())
+
+                        )
                        val intent = Intent(this,InicioActivity::class.java).apply {
                            putExtra("Nombreusuario",binding.Nombre.text.toString())
                        }
